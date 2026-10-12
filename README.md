@@ -24,10 +24,10 @@ Requires an Omarchy host with the current plugin service/bar-widget API and nati
 
 **Omarchy plugins are unsandboxed. Read and trust the source before enabling it.** This plugin can store an account Session and send network-changing requests.
 
-Use the interactive installer and enter this repository's actual clone URL when prompted:
+Install from GitHub, then place the widget in the right section of the bar:
 
 ```sh
-omarchy plugin add
+omarchy plugin add https://github.com/Nombah501/eero-bar.git
 omarchy plugin enable n501.eero-bar --section right
 ```
 
