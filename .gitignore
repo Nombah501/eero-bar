@@ -1,0 +1,25 @@
+# Local research and scratch work
+.scratch/
+data/
+
+# Credentials and private runtime state
+.env
+.env.*
+!.env.example
+session.json
+state/
+*.har
+*.log
+*.pem
+*.key
+
+# Python bytecode and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editor and desktop files
+*.swp
+*.swo
+.DS_Store

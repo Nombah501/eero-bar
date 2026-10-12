@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "n501.eero-bar",
+  "name": "eero",
+  "version": "0.2.0",
+  "author": "N501",
+  "license": "MIT",
+  "description": "Monitor and control an eero mesh network with host-persisted display preferences.",
+  "kinds": ["service", "bar-widget"],
+  "keepLoaded": true,
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "eero",
+    "description": "Network status, nodes, clients, and quick actions for an eero mesh network.",
+    "category": "Network",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "pollSeconds": 60,
+      "showClientCount": false,
+      "density": "compact",
+      "showOfflineClients": false
+    },
+    "schema": [
+      {
+        "key": "pollSeconds",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 30,
+        "max": 3600,
+        "step": 5,
+        "defaultValue": 60
+      },
+      {
+        "key": "showClientCount",
+        "type": "boolean",
+        "label": "Show client count",
+        "description": "Show connected/total Clients next to the bar icon; total is not the connected count.",
+        "defaultValue": false
+      },
+      {
+        "key": "density",
+        "type": "enum",
+        "label": "Row density",
+        "description": "Local spacing and control height on all eero pages; keeps the host theme and font.",
+        "options": ["compact", "comfortable"],
+        "defaultValue": "compact"
+      },
+      {
+        "key": "showOfflineClients",
+        "type": "boolean",
+        "label": "Include offline Clients by default",
+        "description": "Initial Clients scope on Popup open. Does not replace search or scope while the Popup is open.",
+        "defaultValue": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+"""Entry point for the n501.eero-bar helper (docs/helper-protocol.md).
+
+Thin wrapper only: resolves lib/ next to this script's real (symlink-
+resolved) location and dispatches to eero_cli.main(). All behavior lives in
+lib/.
+"""
+
+import os
+import sys
+
+_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+sys.path.insert(0, os.path.join(_ROOT, "lib"))
+
+import eero_cli  # noqa: E402
+
+if __name__ == "__main__":
+    sys.exit(eero_cli.main(sys.argv[1:], sys.stdin, sys.stdout, sys.stderr))
